@@ -23,11 +23,12 @@ input:focus {
   background-color: gray;
 }
 
-.input {
+.display {
   font-size: 30px;
   display: block;
   width: 495px;
   height: 100px;
+  text-align: right;
 }
 
 .buttons-area {
