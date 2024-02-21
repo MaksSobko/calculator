@@ -12,13 +12,21 @@ function calculate(event) {
 
   if (btnValue === "=") {
     display.value = eval(display.value);
-  } else if (btnValue === "C") {
+  }
+  //Delete all
+  else if (btnValue === "C") {
     display.value = "";
-  } else if (btnValue === "X" && display.value != "") {
+  }
+  //Delete last character
+  else if (btnValue === "X" && display.value != "") {
     display.value = dispVal.slice(0, dispVal.lastIndexOf(lastChar));
-  } else if (display.value === "" && btnValue.search(/\/|\+|\*|\./g) > -1) {
+  }
+  //Only minus operator can be first character
+  else if (display.value === "" && btnValue.search(/\/|\+|\*|\./g) > -1) {
     display.value = "";
-  } else if (dispVal != "" && btnValue.search(/\/|\+|\*|\.|\-/g) > -1) {
+  }
+  //Double operator prohibited and replace the last operator with the one just pushed
+  else if (dispVal != "" && btnValue.search(/\/|\+|\*|\.|\-/g) > -1) {
     if (
       dispVal.lastIndexOf(lastChar) != dispVal.search(/\/$|\+$|\*$|\.$|\-$/g)
     ) {
